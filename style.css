@@ -322,6 +322,11 @@ body {
 @media (max-width: 768px) {
     .gallery-grid {
         column-count: 1;
+        column-gap: 0;
+    }
+
+    .gallery-item {
+        margin-bottom: var(--spacing-s); /* Smaller spacing for mobile */
     }
     
     .minimal-header {

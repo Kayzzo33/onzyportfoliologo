@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.getElementById('custom-cursor');
     const navBtns = document.querySelectorAll('.nav-btn');
 
-    // Initialize grids
-    renderGallery(logos, logosGrid, "Logo Design");
-    renderGallery(aplicacoes, aplicacoesGrid, "Brand Application");
+    // Initialize grids - Swapped as per user request
+    renderGallery(aplicacoes, logosGrid, "Logo Design");
+    renderGallery(logos, aplicacoesGrid, "Brand Application");
 
     // Custom Cursor Logic
     document.addEventListener('mousemove', (e) => {
