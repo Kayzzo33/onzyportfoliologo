@@ -10,8 +10,7 @@ const logos = [
     "assets/premium/76092a247519413.69dd181300599.webp",
     "assets/premium/78943f247515213.69dd70f6bcd3a.webp",
     "assets/premium/90c659247515213.69dd70f6bb9b9.webp",
-    "assets/premium/9bddc5247519413.Y3JvcCwxOTEwLDE0OTQsODksODk.png",
-    "assets/premium/f573b1247515213.69dd70f6bd1ed.webp"
+    "assets/premium/9bddc5247519413.Y3JvcCwxOTEwLDE0OTQsODksODk.png"
 ];
 
 const aplicacoes = [

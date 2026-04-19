@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Cursor */
+/* Custom Cursor - Hidden on mobile/tablet */
 #custom-cursor {
     width: 20px;
     height: 20px;
@@ -42,6 +42,12 @@ body {
     mix-blend-mode: difference;
     transition: transform 0.2s ease-out;
     transform: translate(-50%, -50%);
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    #custom-cursor { display: none !important; }
+    * { cursor: auto !important; }
 }
 
 #custom-cursor.hovering {
@@ -204,7 +210,8 @@ body {
     margin-bottom: var(--spacing-m);
     position: relative;
     overflow: hidden;
-    background-color: transparent; /* Remove background box for a cleaner look */
+    background-color: transparent;
+    display: block; /* Ensure it's a block to contain image + overlay */
 }
 
 .gallery-item img {
@@ -235,10 +242,11 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: var(--spacing-m);
+    padding: var(--spacing-s);
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     opacity: 0;
     transition: var(--transition-smooth);
+    pointer-events: none; /* Avoid blocking clicks */
 }
 
 .gallery-item:hover .item-overlay {
@@ -313,48 +321,55 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .gallery-grid {
         column-count: 2;
+        column-gap: var(--spacing-s);
+    }
+    .gallery-item {
+        margin-bottom: var(--spacing-s);
     }
 }
 
 @media (max-width: 768px) {
+    .gallery-section {
+        padding: var(--spacing-l) var(--spacing-s);
+    }
+
     .gallery-grid {
         column-count: 1;
         column-gap: 0;
     }
 
     .gallery-item {
-        margin-bottom: var(--spacing-s); /* Smaller spacing for mobile */
+        margin-bottom: 5px; /* Very tight spacing as requested */
+    }
+
+    .item-overlay {
+        opacity: 1; /* Always show titles on mobile since there is no hover */
+        background: none;
+        position: relative;
+        padding: 5px 0 15px;
+    }
+
+    .item-title {
+        font-size: 0.6rem;
     }
     
     .minimal-header {
         padding: var(--spacing-s);
+        flex-direction: column;
+        gap: var(--spacing-s);
+        background: var(--bg-color);
+        position: relative;
     }
-    
+
     .nav-links {
         gap: var(--spacing-s);
     }
-    
-    .hero-image-container {
-        width: 80%;
-        right: 10%;
-        opacity: 0.3;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-item:nth-child(n) {
-        grid-column: span 1 !important;
-        height: 400px !important;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-s);
+
+    .hero {
+        height: auto;
+        padding: var(--spacing-xl) var(--spacing-s);
     }
 }
