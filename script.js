@@ -25,7 +25,6 @@ const aplicacoes = [
     "assets/a511de5be303e807c622d212db24f900.jpg",
     "assets/d63b47df1390c152bb73f7eb9d0687c1.jpg",
     "assets/dc194aa1a7af66e044ee2cbf5261275c.jpg",
-    "assets/dd9a7b11699acbf9d0e86a261ad4aee9.jpg",
     "assets/e7df790246e57c7031206f7cbe21de66.jpg",
     "assets/eb43df3a5527aa46196cf09a4459d2c2.jpg"
 ];
